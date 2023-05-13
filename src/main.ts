@@ -3,6 +3,7 @@ import './style.css'
 import App from './App.vue'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import router from './router';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBXouNvzV-wdWNvmKCxiWlKyL1fWDPMoao",
@@ -18,4 +19,5 @@ const appFirebase = initializeApp(firebaseConfig);
 getAnalytics(appFirebase);
 
 const app = createApp(App)
+app.use(router)
 app.mount('#app')
